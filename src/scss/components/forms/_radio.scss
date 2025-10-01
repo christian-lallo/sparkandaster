@@ -1,0 +1,44 @@
+
+[type="radio"] {
+
+   // Hide Default
+   position: absolute; 
+   //left: -99999px;
+   opacity: 0;
+
+   & + label {
+
+      padding-top: 6px;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      color: $input-color; 
+      @include font-family('form input');
+
+      // Circle
+      &::before {
+
+         content: '';
+         margin-right: 10px;
+         display: inline-block;
+         vertical-align: middle;
+         width: 20px;
+         height: 20px;
+         background: $input-radio-bg-default;
+         box-shadow: inset 0px 0px 0px 1px $input-border-color;
+         border-radius: 50%; 
+         transition: box-shadow 0.25s ease;
+      }
+
+      &:hover::before {
+
+         box-shadow: inset 0px 0px 0px 6px rgba($input-radio-bg-active, 0.45);
+      }
+   }
+
+   // State Active
+   &:checked + label::before {
+
+      box-shadow: inset 0px 0px 0px 6px $input-radio-bg-active;
+   }
+}

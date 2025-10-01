@@ -1,0 +1,48 @@
+.about {
+	
+	$pad: ( 
+		'mobile': 3.5rem 2.5rem, 
+		'tablet': 6.0rem 1.0rem,
+		'desktop': 7.6rem 0
+	);
+
+	.what-we-do {
+
+		background: $black;
+		padding: map-get($pad, desktop);
+	}
+
+	.how-we-do-things {
+
+		padding: map-get($pad, desktop);
+	}	
+
+	.grid-container {
+
+		margin-top: 6rem;
+	}
+
+	.item {
+
+		position: relative;
+	}
+
+	.art {
+
+		position: absolute;
+		color: #FFF;
+		font-size: 8.4em;
+		@include font-family('haas bold');
+		opacity: 0.07;
+		left: -2.5rem; 
+		top: -3.8rem;
+
+		@include sm() { font-size: 9.4em; left: -3.0rem; top: -4.3rem; }
+		@include tablet() { font-size: 11.4em; left: -4.0rem; top: -5.0rem; }
+	}
+
+	.grid-container--agency-icons {
+
+		margin-top: 10rem;
+	}
+}

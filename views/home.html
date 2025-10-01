@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% set classnames = "home" %}
+
+{% block content %}
+
+    <main class="home">
+    	
+    	{% include 'partials/headers/default.html' with data.header only %}
+
+    	<section class="featured-work">
+    		<div class="inner inner--lg">
+    			
+    			{% include 'partials/headers/work.html' with { 
+	    			'isFeatured': true, 
+	    			'increment': '01',
+	    			'client': 'Goldwell', 
+	    			'color': '#cc9b9c',
+	    			'title': 'The Elements<br>of <span style="color: #cc9b9c">Style.</span>',
+	    			'body': 'Launching an all new haircare line for Goldwell USA.',
+	    			'video': 'goldwell',
+	    			'img': '/dist/img/work/goldwell/drop.png',
+	    			'link': '/work/goldwell'
+    			} only %}
+
+    			{% include 'partials/headers/work.html' with { 
+    				'isFeatured': true, 
+    				'increment': '02',
+    				'client': 'Grace', 
+    				'color': '#7222AF',
+    				'title': 'Grace Starts<br><span style="color: #7222AF">Here.</span>',
+    				'body': 'Spark + Aster helps a female-driven race team bring STEM awareness for young girls to 8 million people.',
+    				'video': 'grace',
+    				'img': '/dist/img/work/grace/car.png',
+    				'link': '/work/grace'
+    			} only %}
+
+    			{% include 'partials/headers/work.html' with { 
+    				'isFeatured': true, 
+    				'increment': '03',
+    				'client': 'Miami', 
+    				'color': '#F47403',
+    				'title': 'Miami<br><span style="color: #F47403">Online.</span>',
+    				'body': 'Dr. Windy Dees and the University of Miami give online learning a human touch.',
+    				'video': 'miami',
+    				'img': '/dist/img/work/miami/dees.png',
+    				'link': '/work/miami'
+    			} only %}
+
+    		</div>
+    	</section>
+
+    </main>
+
+{% endblock %}
+       

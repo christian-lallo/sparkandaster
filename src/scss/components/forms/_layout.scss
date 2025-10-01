@@ -1,0 +1,116 @@
+.form__title {
+
+   margin-bottom: 0.7em;
+}
+
+.form-container { 
+
+   display: flex; 
+}
+
+/**
+ * Form Wrappers
+ */
+
+ // Collection of Inputs
+.form__wrapper {}
+
+// The Collection Title
+.form__wrapper-title {
+
+   margin-bottom: 1em;
+}
+
+/**
+ * Form Groups
+ */
+
+ // Label / Input Group
+.form__group {
+
+   padding: 0;
+   margin-bottom: 1.8rem;
+}
+
+// Flex control
+.form__group-wrapper {
+
+   display: flex;
+   align-items: flex-end;
+   margin-left: -1.4rem;
+
+   @include desktop() { margin-left: -2rem; }
+   @include widescreen() { margin-left: -2.4rem; }
+
+   .form__group { 
+
+      //margin-right: 1.2rem; 
+      margin-left: 1.4rem;
+
+      @include desktop() { margin-left: 2rem; }
+      @include widescreen() { margin-left: 2.4rem; }
+
+      &.is-marginless { margin-left: 0; }
+
+      &.is-quarter { width: 25%; }
+      &.is-half { width: 50%; }
+      &.is-third { width: 33.33%; }
+   }
+}
+
+/**
+ * Form Components
+ */
+
+ // Validation Wrapper
+.form__control { 
+
+   position: relative;
+   display: block;
+}
+
+.form__input-note {
+
+   color: #CCC;
+   font-size: 1.2em;
+   letter-spacing: 0.51px;
+   line-height: 1;
+   padding-top: 5px;
+}
+
+.form__input-desc {}
+
+// Terms of Services
+.form__terms {
+
+   height: 155px;
+   overflow: hidden;
+   padding: map-get($input-pad, mobile); 
+   background: $input-bg; 
+   border: 1px solid rgba($input-border-color, 0.75); 
+   border-radius: $border-radius; 
+   -webkit-overflow-scrolling: touch;
+
+   p {
+
+      font-size: $input-size; 
+      color: $input-color; 
+      letter-spacing: 0.1px;
+      @include font-family('form input');
+   }
+}
+
+/**
+ * Action
+ */
+.form__action {
+
+   //text-align: center;
+   margin-top: 6rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   .btn { margin-top: 2rem; }
+}

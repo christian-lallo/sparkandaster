@@ -1,0 +1,46 @@
+.preloader {
+
+   background-color: #000;
+   position: absolute;
+   z-index: 2;
+   width: 60px;
+   height: 60px;
+   transform: translate(-50%, -50%);
+   top: 50%;
+   left: 50%;
+   display: none;
+
+   &::after {
+
+      content: '';
+      position: absolute;
+      background: url(#{$public-folder}/preloader.svg) no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      transform: translate(-50%, -50%) rotate(0deg);
+      top: 50%;
+      left: 50%;
+
+      animation-duration: 0.35s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+   }
+
+   @keyframes loaderRotation {
+   
+      to {
+         
+         transform: translate(-50%, -50%) rotate(360deg);
+      }
+   }
+
+   // Modifiers
+   &.is-active { 
+
+      display: block; 
+
+      &::after { animation-name: loaderRotation; }
+   }
+}

@@ -1,0 +1,75 @@
+nav {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 8;
+	padding: 8rem 1rem;	
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	color: #FFF;
+	text-align: left;
+	font-size: 4.0em;
+	letter-spacing: -0.02em;
+	line-height: 0.9;
+	@include font-family('haas bold');
+
+	li {
+
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		&:hover {
+
+			a { color: $pink; }
+
+			hr { background: $pink; }
+		}
+	}
+
+	hr {
+
+		width: 4rem;
+		transition: background 0.3s ease;
+	}
+
+	a { 
+
+		color: inherit; 
+		padding: 1rem 0;
+		display: block;
+		margin-left: 2rem;
+		cursor: pointer;	
+		transition: color 0.3s ease;	
+	}
+
+	&.is-active {
+
+		pointer-events: all;
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 0.5s;
+	}
+
+	&.is-inactive {
+
+		opacity: 0;
+		transition: opacity 0.35s;
+	}
+
+	@include sm() {
+
+		padding: 10rem 4rem;	
+		font-size: 7.4em;
+
+		hr { width: 7rem; }
+		a { margin-left: 3rem; }
+	}
+
+	@include desktop() {
+
+		font-size: 8.4em;
+	}
+}

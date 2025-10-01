@@ -1,0 +1,131 @@
+
+// Placeholder
+::-webkit-input-placeholder { color: $input-placholder; }
+::-moz-placeholder { color: $input-placholder; }
+:-ms-input-placeholder { color: $input-placholder; }
+:-moz-placeholder { color: $input-placholder; }
+
+// Autofill
+input:required:valid, 
+input[type]:required:valid,
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+   border-color: $input-border-color;
+   -webkit-text-fill-color: #000;
+   -webkit-box-shadow: 0 0 0px 1000px $offwhite inset;
+   transition: background-color 5000s ease-in-out 0s, border 0.25s ease, color 0.25s ease;
+}
+
+// Clear
+input[type]::-webkit-search-cancel-button {
+
+   position: relative;
+   right: 10px; 
+}
+
+// Remove native style
+input {
+   
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+input:read-only { pointer-events: none; }
+
+// Errors
+input:required { box-shadow: none; }
+input:invalid { box-shadow: 0 0 0 none; border-color: $color-error; }
+input:valid { box-shadow: 0 0 0 none; }
+
+// Labels
+label,
+legend { 
+
+   position: relative;
+   white-space: normal;
+   display: inline-block; 
+   margin: map-get($label-margin, mobile);
+   font-size: $label-size; 
+   color: $label-color; 
+   @include font-family('form label');
+   @include letter-spacing(0.55);
+
+   @include tablet-only() {   
+      .is-hidden-tablet { display: none; } 
+   }
+}
+
+fieldset ul li:last-of-type label,
+fieldset ul li:last-of-type legend { margin-bottom: 0; }
+
+
+// Inputs
+input,
+textarea, 
+select { 
+
+   display: block; 
+   width: 100%;
+   resize: vertical; 
+   padding: map-get($input-pad, mobile); 
+   background-color: $input-bg; 
+   border: 1px solid rgba($input-border-color, 1); 
+   border-radius: $border-radius; 
+   font-size: $input-size; 
+   color: $input-color; 
+   letter-spacing: 0.1px;
+   @include font-family('form input');
+   transition: border 0.25s ease, color 0.25s ease;
+
+   &.is-danger { border-color: $color-error; }
+   &.is-valid { border-color: $color-success; }
+
+}
+
+textarea { line-height: 1.5; }
+
+// Hover
+//input[type="search"]:hover,
+input:hover, 
+select:hover, 
+textarea:hover {
+
+   border: 1px solid $input-border-hover; 
+}
+
+// Focus
+//input[type="search"]:focus,
+input:focus,  
+select:focus, 
+textarea:focus { 
+
+   color: $input-color-focus;
+   border: 1px solid $input-border-focus; 
+   background-color: $input-bg-focus; 
+
+   &[readonly="readonly"] { border-color: $input-border-color; }
+}
+
+// Select
+select { 
+
+   appearance: none;
+   width: 100%; 
+   padding: index($input-pad, 0);
+   background-image: url(#{$public-folder}/icons/icon-toggle.svg); 
+   background-repeat: no-repeat; 
+   background-size: 1.5rem 1.5rem; 
+   background-position: calc(100% - 1rem) 50%;
+   padding-right: 1.7em;
+}
+

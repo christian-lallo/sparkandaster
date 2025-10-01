@@ -1,0 +1,70 @@
+
+[type="checkbox"] {
+
+   // Visually Hide 
+   position: absolute; 
+   left: -99999px;
+   z-index: 1;
+   width: auto;
+   margin: 0;
+
+   & + label {
+
+      display: inline;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      color: $input-color; 
+      @include font-family('form input');
+
+      // Box
+      &::before {
+
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid $input-border-color; 
+        border-radius: 2px; 
+      }
+
+      // Checkmark
+      &::after {
+
+         content: '';
+         position: absolute;
+         left: 0.4rem;
+         top: 0.5rem;;
+         margin: auto;
+         background-size: contain;
+         background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path class="check" fill="none" stroke="#{url-friendly-color(#FFF)}" stroke-width="21.2714" stroke-linecap="round" stroke-linejoin="round" d="M89,24.5L63,50 l-26,25.5l-15-14.7L11.1,50"/></svg>') no-repeat;
+         opacity: 0;
+         width: 1.0rem;
+         height: 1.0rem;
+         transition: opacity 0.35s ease;
+      }
+
+      &:hover::after { opacity: 1; }
+
+       + a { 
+
+         display: inline; 
+         font-size: $label-size; 
+         line-height: 1.35;
+       }
+   }
+
+   // Checkmark
+   &:checked {
+
+      + ::before { background: $input-checkbox-bg; border-color: $input-checkbox-border; }
+
+      + ::after { 
+         background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path class="check" fill="none" stroke="#{url-friendly-color($offwhite)}" stroke-width="21.2714" stroke-linecap="round" stroke-linejoin="round" d="M89,24.5L63,50 l-26,25.5l-15-14.7L11.1,50"/></svg>') no-repeat;
+      }
+
+      + label:after { opacity: 1; }
+   }
+}

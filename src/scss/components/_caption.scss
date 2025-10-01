@@ -1,0 +1,88 @@
+.caption {
+
+	color: $black;
+
+	.container {
+
+		display: flex;
+		align-items: center;
+	}
+	
+	margin-bottom: 1.5rem;
+
+	.caption__text {
+
+		@include font-family('haas med');
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+
+		&:first-of-type { margin-right: 1.2rem; }
+		&:nth-of-type(2),
+		&:only-of-type { margin-left: 1.2rem; }
+	}
+
+	hr { margin: 0; }
+
+	/**
+	 * Animation
+	 */
+	&.anim--pre {
+
+		hr { 
+
+			transform-origin: 0 0;
+			transform: scale(0, 1); 
+		}
+	}
+
+	&.anim--in {
+
+		hr { 
+
+			transform-origin: 0 0;
+			transform: scale(1, 1); 
+			transition: transform 0.75s 0.25s ease;
+		}
+	}
+
+	/**
+	 * Modifiers
+	 */
+	&.is-sm { 
+
+		hr { width: 2.5em; }
+	}
+
+	&.is-lg { 
+
+		hr { width: 4.2em; }
+	}
+
+	&.is-white {
+
+		.caption__text { color: #FFF; }
+
+		hr { background: #FFF; }
+	}
+
+	/**
+	 * Breakpoints
+	 */
+	@include tablet() {
+
+		.caption__text { font-size: 1.1em; }
+
+		&.is-sm { 
+
+		}
+
+		&.is-lg { 
+
+			hr { width: 7.2em; }
+		}
+	}
+
+	@include desktop() {
+
+	}
+}

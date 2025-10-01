@@ -1,0 +1,40 @@
+#lightbox {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba($black, 0.95);
+	width: 100%;
+	height: 0%;
+	z-index: 98;
+	visibility: hidden;
+	opacity: 0;
+
+	.btn--close { 
+
+		position: fixed;
+		cursor: pointer; 
+		padding: 4rem;
+	}
+
+	&.for-nav {
+
+		z-index: 7;
+
+		.btn--close { display: none; }
+	}
+
+	&.is-active {
+
+		visibility: visible;
+		height: 100%;
+		opacity: 1;
+		transition: opacity 0.5s;
+	}
+
+	&.is-inactive {
+
+		opacity: 0;
+		transition: opacity 0.35s;
+	}
+}

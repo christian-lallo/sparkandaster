@@ -1,0 +1,51 @@
+
+{% if isFeatured == true  %}
+
+	<div id="{{ client | lower | replace({' ': '-'}) | raw }}" class="case-study__intro">
+		<div class="container">
+			<div class="bg waypoint-anim">
+				{% include 'partials/caption.html' with { 'text1': 'Featured Work', 'text2': increment, 'styles': 'is-lg' } only %}
+				<div class="video is-bg-loop">
+					<video loop autoplay>
+					  <source src="/dist/vid/{{ video }}.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="solid" style="background-color: {{ color }}"></div>
+			</div>
+			<div class="fg waypoint-anim">
+				<div class="container contained">
+					<h1 class="h--xxl">{{ title | raw }}</h1>
+					<hr style="background: {{ color }}">
+					<p>{{ body | raw }}</p>
+					<a class="link link--default" href="{{ link }}" target="_top">View Project</a>
+				</div>
+				<img class="thumb" src="{{ img }}">
+			</div>
+		</div>
+	</div>
+
+{% else %}
+
+	<div id="{{ client | lower | replace({' ': '-'}) | raw }}" class="case-study__intro">
+		{% include 'partials/caption.html' with { 'text1': client, 'text2': 'Client', 'styles': 'is-lg' } only %}
+		<div class="container">
+			<div class="bg waypoint-anim">
+				<div class="video is-bg-loop">
+					<video loop autoplay>
+					  <source src="/dist/vid/{{ video }}.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="solid" style="background-color: {{ color }}"></div>
+			</div>
+			<div class="fg waypoint-anim">
+				<div class="container contained">
+					<h1 class="h--xxl">{{ title | raw }}</h1>
+					<hr style="background: {{ color }}">
+					<p>{{ body | raw }}</p>
+				</div>
+				<img class="thumb" src="{{ img }}">
+			</div>
+		</div>
+	</div> 
+
+{% endif %}

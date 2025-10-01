@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Spark + Aster: Building richer, more human connections.</title>
+		<meta name="description" content="Spark + Aster is a creative agency built on the belief of the intrinsic value of human understanding. We help organizations navigate an increasingly dehumanized marketing landscape and connect with audiences in richer, more productive, and ultimately more human ways." />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 , minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="icon" type="image/png" href="dist/img/favicon.png" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+	    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+		<link rel="stylesheet" href="/dist/css/styles.css">
+
+
+		{% block js %}
+		{% endblock %}
+
+	</head>
+	<body class="{{ classnames }}" style="background-color: white;">
+  	
+  		<div id="lightbox">
+  			{% include 'partials/caption.html' with { 'text1': 'close',  'styles': 'btn--close is-white is-sm' } only %}
+  		</div>
+
+  		<header class="site-header">
+  			<a href="/" class="logo">
+  				<img src="/dist/img/icons/logo.svg">
+  			</a>
+  			{# <button class="btn--nav">
+  				<span class="icon"></span>
+  				<span class="label">Menu</span>
+  			</button> #}
+  		</header>
+  		{#
+  		<nav>
+  			<ul>
+  				<li>
+  					<hr class="is-white is-xl">
+  					<a href="/" target="_top">Home</a>
+  				</li>
+  				<li>
+  					<hr class="is-white is-xl">
+  					<a href="/about" target="_top">About</a>
+  				</li>
+  				<li>
+  					<hr class="is-white is-xl">
+  					<a href="/team" target="_top">Team</a>
+  				</li>
+  			</ul>
+  		</nav>#}
+
+		{% block content %}
+		{% endblock %}
+        
+		<footer class="footer" style="margin-top: 0">
+			<div class="inner inner--sm">
+				<img class="footer__logo" src="/dist/img/icons/logo.svg">
+				<div class="container">
+					<div class="footer__contact">
+						<h5 class="h--sm">Contact</h5>
+						<hr class="is-sm is-divider is-white">
+						<p><a href="mailto:hello@sparkandaster.com" target="_top">hello@sparkandaster.com</a></p>
+						<p><a href="tel:443.966.3563" target="_top">443.966.3563</a></p>
+					</div>
+					<div class="footer__locations">
+						<h5 class="h--sm">Locations</h5>
+						<hr class="is-sm is-divider is-white">
+						<div class="locations">
+							<div class="location">
+								<p><span class="h--sm is-color-pink">Baltimore</span></p>
+								<p>11101 Verdant Rd,<br>Owings Mills, MD 21117</p>
+								<p><a href="tel:443.966.3563" target="_top">443-966-3563</a></p>
+							</div>
+							<div class="location">
+								<p><span class="h--sm is-color-pink">Detroit</span></p>
+								<p>1221 Bowers Street #972,<br>Birmingham, MI 48012</p>
+								<p><a href="tel:317.941.6788" target="_top">317-941-6788</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="cr">© Spark + Aster</p>
+			</div>
+		</footer>
+
+		{% if getenv('APP_ENV') == 'dev' %}
+			<script id="__bs_script__">//<![CDATA[
+			    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
+			    //]]>
+			</script>
+		{% endif %}
+
+		<script src="/dist/js/scripts.js"></script>
+	</body>
+	</html>

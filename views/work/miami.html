@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% set classnames = "case-study case-study--grace" %}
+{% set color = "#F47403" %}
+
+{% block content %}
+
+	<main class="case-study">
+		<div class="inner inner--lg">
+
+			{% include 'partials/headers/work.html' with { 
+				'isFeatured': false, 
+				'increment': '03',
+				'client': 'Miami', 
+				'color': '#F47403',
+				'title': 'Miami<br><span style="color: #F47403">Online.</span>',
+				'body': 'Dr. Windy Dees and the University of Miami give online learning a human touch.',
+				'video': 'miami',
+				'img': '/dist/img/work/miami/dees.png',
+				'link': '/work/miami'
+			} only %}
+
+			<div class="content-block is-summary">
+				<div class="is-centered">
+					<hr class="is-xl is-vert is-centered">
+					<h2 class="h--xl">Lorem Ipsum<br><span style="color: {{ color }}">consectetur</span></h2>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<button class="icon icon--triangle is-clickable" data-vid="261393189">
+					{{ svg('icon-triangle') }}
+				</button>
+				<img src="/dist/img/work/miami/media-5.jpg">
+			</div>	
+
+			<div class="media-block grid-container grid-container--media">
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-1.jpg">
+				</div>
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-2.jpg">
+				</div>
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-3.jpg">
+				</div>
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-4.jpg">
+				</div>
+			</div>
+
+			<div class="media-block grid-container grid-container--media">
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-6.jpg">
+				</div>
+				<div class="item is-clickable" data-vid="">
+					<img src="/dist/img/work/miami/media-7.jpg">
+				</div>
+			</div>
+
+			<div class="media-block grid-container grid-container--media is-thirds">
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-8.jpg">
+				</div>
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-9.jpg">
+				</div>
+				<div class="item" data-vid="">
+					<img src="/dist/img/work/miami/media-10.jpg">
+				</div>
+			</div>	
+
+		</div>
+	</main>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+.footer {
+
+	$pad: ( 'mobile': 3.0rem, 'tablet': 7.0rem );
+
+	background: $black;
+	margin-top: 14.0rem;
+	padding: map-get($pad, tablet) 0 3rem 0;
+
+	/**
+	 * Typography
+	 */
+	p {
+
+		color: #FFF;
+		@include font-family('haas reg');
+		font-size: 1.4em;
+		letter-spacing: 0.05em;
+
+		a { color: inherit; }
+	}
+
+	h5 { color: $dark-grey; }
+
+	/**
+	 * Logo
+	 */
+	&__logo {
+
+		max-width: 19.0rem;
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+
+	/**
+	 * Content Container
+	 */
+	&__locations { 
+
+		margin-top: 4rem;
+
+		.location { margin-bottom: 2rem; }
+	}
+
+	/**
+	 * Copyright
+	 */
+	.cr { 
+
+		font-size: 1.1em; 
+		margin-top: 7.0rem;
+	}
+
+	/**
+	 * Breakpoints
+	 */
+	@include sm() {
+
+		&__locations { 
+
+			.locations { 
+
+				display: flex; 
+				margin-left: -6rem;
+			}
+
+			.location { margin-left: 6rem; }
+		}
+   }
+
+	@include tablet() {
+
+		.container { 
+
+			display: flex;
+			margin-left: -10rem; 
+		}
+
+		&__contact { 
+
+			width: 20%; 
+			margin-left: 10rem; 
+		}
+
+		&__locations { 
+
+			width: 80%; 
+			margin-left: 10rem; 
+			margin-top: 0;
+		}
+	}
+}

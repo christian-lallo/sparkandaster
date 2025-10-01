@@ -1,0 +1,49 @@
+.list {
+
+   margin: 0;
+   list-style: none;
+   padding: 0;
+
+   @at-root ul#{&}--default {
+     
+     list-style: disc;
+     list-style-position: inside;
+   }
+
+   @at-root ol#{&}--default {
+     
+     list-style: decimal;
+     list-style-position: inside;
+   }
+
+   &--dashed {
+
+   	margin-top: 1.5rem;
+
+   	li { 
+
+   		@include font-family('haas med');
+   		font-size: 1.0em;
+   		text-transform: uppercase;
+   		letter-spacing: 0.03rem;
+   		margin-bottom: 1.2rem;
+   		display: flex;
+   		align-items: center;
+
+   		&::before {
+
+   			content: '';
+   			display: block;
+   			background: $black;
+   			width: 2.5rem;
+   			height: 1px;
+   			margin-right: 1.2rem;
+   		}
+   	}
+
+   	&.is-color-white {
+
+   		li { color: #FFF; }
+   	}
+   }
+}

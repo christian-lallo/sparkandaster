@@ -1,0 +1,53 @@
+.page-header {
+
+	$pad: ( 'mobile': 1.5rem, 'tablet': 1.5rem 1.75rem );
+
+	padding: 33vh 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.inner {
+
+		margin: auto;
+		width: auto;
+		//padding: 0 2vw;
+		display: table;
+	}
+
+	h1 {
+
+		margin: 0 0 1.4rem 0;
+	}
+
+	.body {
+
+		display: flex;
+		align-items: center;
+
+		hr { width: 3.2rem; }
+
+		p {
+
+			max-width: 37.0rem;
+			margin-left: 2rem;
+			@include font-family('serif');
+			font-size: 1.4em;
+			color: $black;
+			line-height: calc(26/18);
+		}
+	}
+
+	/**
+	 * Breakpoints
+	 */
+	@include tablet() {
+
+		.body {
+
+			hr { width: 7.5rem; }
+		}
+	}
+}

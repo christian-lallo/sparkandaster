@@ -1,0 +1,100 @@
+// Defaults
+a, 
+button,
+button:hover, 
+button:focus, 
+button:active, 
+input, 
+input:focus, 
+select, 
+select:focus, 
+textarea, 
+textarea:focus { outline: 0; cursor: pointer; text-decoration: none; }
+
+form { 
+
+   font-size: 100%; 
+
+   // Modifiers
+   .is-loading {
+
+      pointer-events: none; 
+      position: relative;
+
+      // preloader with background image
+      // input {
+
+      //    background: url(/dist/img/Rolling.gif) no-repeat;
+      //    background-size: 30px 30px;
+      //    background-position: 98% 50%;
+      // }
+
+      // preload on "control" wrapper : more flexibility
+      &::before {
+
+         content: "";
+         position: absolute;
+         width: 30px;
+         height: 30px;
+         background: url(#{$public-folder}/preloader.svg) no-repeat;
+         background-size: cover;
+         background-position: center center;
+         right: 10px;
+         top: 50%;
+         transform: translate(0%, -50%) rotate(0deg);
+
+         animation-duration: 0.4s;
+         animation-name: loaderRotation;
+         animation-iteration-count: infinite;
+         animation-timing-function: linear;
+      }
+
+      input { pointer-events: none; }
+   }
+
+   .is-inactive {
+
+      pointer-events: none;
+      
+      label,
+      legend { color: hsla(201,9%,45%,.5); }
+
+      input { background: hsla(210,2%,80%,.35); }
+   }
+
+   // !! make sure remove white space in html !!
+   .is-required {
+
+      display: inline-block;
+      padding-right: 10px;
+
+      &::after { 
+
+         content: '*';
+         position: absolute;
+         color: inherit;
+         font-family: inherit;
+         font-size: inherit;
+         letter-spacing: inherit;
+         bottom: 0;
+         transform: translateX(5px);
+         left: auto;
+         white-space: pre;
+      }
+   }
+
+   // Hide Labels
+   .is-visually-hidden {
+
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+   }
+}
+
+

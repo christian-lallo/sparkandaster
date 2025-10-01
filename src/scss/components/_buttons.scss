@@ -1,0 +1,154 @@
+$accent-multiplier: 10%;
+
+@mixin btn( $bg: #013067, $color: #FFF ) {
+  
+   color: $color;
+   @include font-family('');
+   letter-spacing: 0.15em;
+   background: $bg;
+   border: 0;
+   width: auto;
+   max-width: 25.0rem;
+   border-radius: 0;
+   border-radius: 22.5px;
+   padding: 1.12rem 4rem;
+   margin-bottom: 2rem;
+   transition: background 0.5s ease;
+
+   @include sm() {
+
+       padding: 1.35rem 2rem;
+       min-width: 20.0rem;
+   }
+
+   &:hover {
+
+      background: darken( $bg, $accent-multiplier );
+   }
+}
+
+/**
+ * Buttons
+ */
+.btn {
+
+   > * { pointer-events: none; }
+   background: transparent;
+
+   &--primary {
+
+     @include btn( rgba(blue, 0.85) ); 
+     text-transform: uppercase;
+     font-size: 1.2em;
+
+     @include sm() { font-size: 1.3em; }
+
+     &.is-selected {
+
+        background: transparent;
+        border: 2px solid blue;
+        color: blue;
+     }
+   }
+   
+   &--secondary {
+
+   }
+
+   &--tertiary {
+
+   }
+
+   &--plain {
+
+   }
+
+   &.is-disabled {
+
+   }
+
+   &.has-icon {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg { 
+
+         margin-left: 0.8rem; 
+         width: 1.5rem;
+         fill: #FFF;
+      }
+   }
+
+   &:hover {
+
+   }
+}
+
+/**
+ * Links
+ */
+.link {
+
+   text-decoration: none;
+   text-align: left;
+   padding: 0;
+
+   &--default {
+
+   	position: relative;
+   	z-index: 1;
+      font-size: 1.4em;
+      color: $black;
+      @include font-family('haas reg');
+      padding: 0.5rem 0.4rem;
+      transition: color 0.5s ease;
+
+      &::after {
+
+      	pointer-events: none;
+      	content: '';
+      	display: block;
+      	position: absolute;
+      	z-index: -3;
+      	width: 100%;
+      	height: 100%;
+      	background: $black;
+      	left: 0;
+      	bottom: 0;
+      	transform: translate(0, 60%) scale(1, 0.025);
+      	transition: transform 0.2s $ease-3;
+      }
+
+      &:hover {
+
+      	color: #FFF;
+
+         &::after {
+
+         	transform: translate(0, 0%) scale(1,1);;
+         	transition: transform 0.3s $ease-3;
+         }
+      }
+
+      @include sm() { font-size: 1.4em; }
+   }
+
+   &--plain {
+
+      font-size: 1.3em;
+      color: blue;
+
+      @include sm() { font-size: 1.4em; }
+   }
+
+   &.has-icon {
+
+      display: flex;
+      align-items: center;
+
+      svg { margin-right: 1rem; }
+   }
+}
+

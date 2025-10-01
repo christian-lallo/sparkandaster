@@ -1,0 +1,29 @@
+main {
+
+	//padding-top: 15rem;
+}
+
+.inner {
+
+	max-width: 120.0rem;
+	padding: 0 6vw;
+	margin: 0 auto;
+
+	&--sm {
+
+		//max-width: 100.0rem;
+	}
+
+	&--lg {
+
+		max-width: 140.0rem;
+	}
+}
+
+
+.is-centered { 
+
+	margin-left: auto;
+	margin-right: auto;
+	display: table;
+}

@@ -1,0 +1,244 @@
+$max-width: (
+	'mobile': 48.0rem,
+	'tablet': 5.40rem,
+	'desktop': 64.0rem
+);
+
+/*
+ * Default
+ */
+em, i, p, b, strong { 
+
+   text-align: left;
+}
+
+label, p {
+
+   a { font-size: inherit !important; }
+}
+
+/**
+ * Headers
+ */
+h1, h2, h3, h4, h5, h6 {
+
+   margin: 0;
+   max-width: map-get($max-width, mobile);;
+
+   &.is-marginless { margin-bottom: 0; }
+
+   @include tablet() {
+
+   	max-width: map-get($max-width, desktop);
+   }
+}
+
+.h--intro { 
+
+	font-size: 6.4em;
+	letter-spacing: -0.02em;
+	line-height: 0.9;
+	@include font-family('haas bold');
+	max-width: 70.0rem;
+
+	@include sm() {
+
+		font-size: 8.4em;
+	}
+
+	@include desktop() {
+
+		font-size: 10.8em;
+		max-width: 70.0rem;
+	}
+}
+
+.h--xxl { 
+
+	font-size: 5.4em;
+	letter-spacing: -0.02em;
+	line-height: 0.9;
+	@include font-family('haas bold');
+
+	@include sm() {
+
+		font-size: 7.4em;
+	}
+
+	@include desktop() {
+
+		font-size: 9.4em;
+	}
+}
+
+.h--xl { 
+
+	margin-bottom: 1.9rem;
+	font-size: 4.0em;
+	letter-spacing: -0.02em;
+	line-height: 0.9;
+	@include font-family('haas bold');
+
+	@include sm() {
+
+		font-size: 5.0em;
+	}
+
+	@include desktop() {
+
+		font-size: 7.4em;
+	}
+}
+
+.h--lg { 
+
+	margin-bottom: 1.5rem;
+	font-size: 3.0em;
+	letter-spacing: -0.02em;
+	line-height: 0.9;
+	@include font-family('haas bold');
+
+	@include tablet() {
+
+		font-size: 5.0em;
+	}
+
+	@include desktop() {
+
+		font-size: 6.0em;
+	}
+}
+
+.h--md { 
+
+	margin-bottom: 3rem;
+	font-size: 2.4em;
+	letter-spacing: 0em;
+	line-height: 1.05;
+	@include font-family('haas bold');
+
+	@include tablet() {
+
+		font-size: 2.4em;
+	}
+
+	@include desktop() {
+
+		font-size: 3.0em;
+	}
+}
+
+.h--sm { 
+
+	font-size: 1.4em;
+	letter-spacing: 0em;
+	line-height: 0.9;
+	@include font-family('haas bold');
+}
+
+/**
+ * Paragraphs
+ */
+p {
+
+   font-size: 1.6em;
+   line-height: 1.5;
+   text-align: left;
+   letter-spacing: -0.02em;
+   @include font-family('serif');
+   margin: 0;
+   max-width: map-get($max-width, mobile);
+
+   @include desktop() {
+
+   	max-width: map-get($max-width, desktop);
+   }
+}
+
+.summary  { 
+
+	@include font-family('haas reg');
+	font-size: 1.6em;
+	letter-spacing: 0.02em;
+	margin-bottom: 6rem;
+	max-width: map-get($max-width, mobile);
+
+	&.is-marginless { margin-bottom: 0; }
+
+	@include tablet() {
+
+		max-width: map-get($max-width, desktop);
+	}
+}
+
+/**
+ * Text
+ */
+
+[class*="txt--"] {
+
+}
+
+.txt--lg  { 
+
+	font-size: 1.6em;
+}
+
+.txt--md  { 
+
+	font-size: 1.4em;
+}
+
+.txt--sm  { 
+
+}
+
+.txt--xs  { 
+
+}
+
+.txt--xxs { 
+
+}
+
+/*
+ * Font Weights
+ */
+.is-font-reg { @include font-family(''); }
+
+.is-font-bold { @include font-family(''); }
+
+.is-font-semibold { @include font-family(''); }
+
+.is-font-semibold-italic { @include font-family(''); }
+
+/*
+ * Alignment
+ */
+.is-aligned-center { text-align: center; }
+
+/**
+ * Colors
+ */
+.is-color-pink { color: $pink; }
+.is-color-white { color: #FFF; }
+.is-color-grey-light { color: $light-grey; }
+.is-color-grey-dark { color: $dark-grey; }
+.is-color-black { color: $black; }
+
+
+/*************************************************
+   BREAKPOINTS
+*************************************************/
+
+@include mobile-only() {
+
+}
+
+@include sm() {
+
+}
+
+@include tablet() {
+
+}

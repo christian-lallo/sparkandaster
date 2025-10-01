@@ -1,0 +1,298 @@
+// Breakpoints
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+/*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+$sm: 568px;
+$tablet: 768px;
+$desktop: 1024px;
+$widescreen: 1280px;
+$fullhd: 1400px;
+
+@mixin until($device) {
+  @media screen and (max-width: $device - 1px) { @content; }
+}
+
+@mixin mobile-only {
+  @media (max-width: $sm - 1px) { @content; }
+}
+
+@mixin sm {
+  @media (min-width: $sm) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) { @content; }
+
+}
+@mixin tablet-only {
+  @media (min-width: $tablet) and (max-width: $desktop - 1px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) { @content; }
+}
+
+@mixin desktop-only {
+  @media (min-width: $desktop) and (max-width: $widescreen - 1px) { @content; }
+}
+
+@mixin widescreen {
+  @media (min-width: $widescreen) { @content; }
+}
+
+@mixin widescreen-only {
+  @media (min-width: $widescreen) and (max-width: $fullhd - 1px) { @content; }
+}
+
+@mixin fullhd {
+  @media (min-width: $fullhd) { @content; }
+}
+
+@mixin mobile-device-only { 
+   @media only screen and (max-device-width : 1024px) and (orientation : landscape), only screen and (max-device-width : 1024px) and (orientation : portrait) { @content; }
+}
+
+
+// Fonts
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin font-family( $family ) {
+   
+   // Base
+   @if $family == 'base' {
+      font-family: sans-serif;
+      font-style: normal;
+   }
+
+   @if $family == 'serif' {
+      font-family: 'Lora', serif;
+   }
+
+   @if $family == 'form label' {
+      font-family:'Neue Haas Grotesk W01 Disp';
+      font-weight: 600;
+   }
+
+   @if $family == 'haas reg' {
+   	font-family:'Neue Haas Grotesk W01 Disp';
+   	font-weight: 500;
+   }
+   
+   @if $family == 'haas med' {
+   	font-family:'Neue Haas Grotesk W01 Disp';
+   	font-weight: 600;
+   }
+
+   @if $family == 'haas bold' {
+   	font-family:'Neue Haas Grotesk W01 Disp';
+   	font-weight: 700;
+   }
+}
+
+// PS and Sketch letter-spacing conversion
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@function letter-spacing( $num ) {
+
+  @return ($num / 1000) * 16;
+}
+
+@mixin letter-spacing( $num ) {
+
+  letter-spacing: letter-spacing( $num ) + em;
+}
+
+// Convert inline SVG color to a string
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@function url-friendly-color( $color ) {
+
+   @return '%23' + str-slice('#{$color}', 2, -1)
+}
+
+// Aspect Ratio
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin min-max-ratio() {
+   
+   @media (min-aspect-ratio: 16/9) {
+
+      width: 100%; height: auto;
+      transform: translate3d(-50%, -50%, 0); 
+      top: 50%; 
+      left: 50%; 
+   }
+
+   @media (max-aspect-ratio: 16/9) {
+
+      height: 100%; width: auto;
+      transform: translate3d(-50%, -50%, 0); 
+      top: 50%; 
+      left: 50%; 
+   }
+}
+
+@mixin aspect-ratio( $width, $height ) {
+
+  position: relative;
+
+  &:before {
+
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .ratio {
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+// Aspect Ratio
+// - @extend %clearfix;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+%clearfix {
+   //*zoom: 1;
+   &:before, &:after {
+      content: "";
+      display: table;
+   }
+   &:after {
+      clear: both;
+   }
+}
+
+@mixin clearfix() {
+   
+   //*zoom: 1;
+   &:before, &:after {
+      content: "";
+      display: table;
+   }
+   &:after {
+      clear: both;
+   }
+}
+
+// Natural scrolling check
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@mixin check-mobile() {
+
+   // if body has class is-mobile, apply specific style
+   body.is-mobile & {
+
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+   }
+}
+
+// Alignment
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@mixin center-align-rel() {
+
+   position: relative;
+   margin: auto;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@mixin horz-align-rel() {
+
+   display: table;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+@mixin center-align() {
+
+   position: absolute;
+   margin: auto;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: table;
+}
+
+@mixin horz-align( $isText: false ) {
+
+   position: absolute;
+   left: 50%;
+   margin: auto;
+   transform: translate(-50%, 0);
+
+   @if $isText == true {
+
+      display: block;
+      text-align: center;
+
+   }@else {
+
+      display: table;
+   }
+}
+
+@mixin vert-align() {
+
+   position: absolute;
+   margin-top: auto;
+   margin-bottom: auto;
+   top: 50%;
+   transform: translate(0, -50%);
+}
+
+/**
+ * STRIP UNIT
+ * Strip units from a number
+ *
+ * @param number $num The number to convert
+ *
+ * @return number Unitless number
+ */
+@function strip-unit($num) {
+   @return $num / ($num * 0 + 1);
+}
+
+/**
+ * REM FIX
+ * Convert rem values from a 10px base to a 16px base. Can accept single values, or a full set of property values.
+ * Examples:
+ * padding: remfix(4rem);                // padding: 2.5rem;
+ * padding: remfix(2rem auto);           // padding: 1.25rem auto;
+ * padding: remfix(1px auto 1rem 0.2em); // padding: 1px auto 0.625rem 0.2rem;
+ * border: remfix(0.25rem) solid blue;   // border: 0.15625rem solid blue;
+ *
+ * @param list $args A value list. Only rem values will be transformed
+ *
+ * @return list Transformed value list with rem values modified
+ */
+@function remfix($args...) {
+   $values: nth($args, 1);
+   $max: length($values);
+   $value-base: 10;
+   $rem-base: 16;
+
+   @for $i from 1 through $max {
+      $value: nth($values, $i);
+      @if (type-of($value) == number) and (not unitless($value)) and (unit($value) == rem) {
+         $value: (strip-unit($value) * $value-base) / $rem-base;
+         $value: $value * 1rem;
+      }
+
+      $values: set-nth($values, $i, $value);
+   }
+
+   @return $values;
+}

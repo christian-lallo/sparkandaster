@@ -1,0 +1,62 @@
+.modal {
+
+	position: fixed;
+	z-index: 99;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	opacity: 0;
+	animation: fade-in 1s 0.5s 1 forwards ease;
+
+	.modal__container {
+
+		> * { 
+
+			position: absolute;
+			z-index: 99;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&--video {
+
+		width: 80%;
+		padding-top: (16/ 9) * 100%;
+
+		//@include aspect-ratio(16,9);
+	}
+
+	&.is-inactive {
+
+		animation: fade-out 0.5s 0.0s 1 forwards ease;
+	}
+
+	@keyframes fade-out {
+
+	   0% {
+
+	      opacity: 1;
+	   }
+
+	   100% {
+
+	      opacity: 0;
+	   }
+	}
+
+	@keyframes fade-in {
+
+	   0% {
+
+	      opacity: 0;
+	   }
+
+	   100% {
+
+	      opacity: 1;
+	   }
+	}
+}

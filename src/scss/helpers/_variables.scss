@@ -1,0 +1,65 @@
+
+$public-folder: '/img/bookit';
+
+/**
+ * Colors
+ */
+$offwhite: #F4F4F4;
+$black: #131414;
+$pink: #EC008C;
+$dark-grey: #464646;
+$light-grey: #565656;
+
+$purple: #7222AF;
+$salmon: #D4ABAF;
+$orange: #F47403;
+
+/**
+ * Selection
+ */
+$select-bg: $black;
+$select-color: #FFF;
+
+/**
+ * MEssages
+ */
+ $color-info: #c9d0d4;
+ $color-success: #94BCB2;
+ $color-warning: #ebaa40;
+ $color-error: #BE493C;
+
+/**
+ * Forms
+ */
+$border-radius: 1px;
+
+$input-size: 1.6em;
+$input-placholder: #CCC;
+
+$input-color: #CCC;
+$input-color-focus: #000;
+
+$input-bg: $offwhite;
+$input-bg-focus: #FFF;
+
+$input-border-color: #000;
+$input-border-focus: #EEE;
+$input-border-hover: #CCC;
+
+$input-radio-bg-default: #FFF;
+$input-radio-bg-active: red;
+$input-checkbox-bg: #000;
+$input-checkbox-border: #000;
+
+$input-pad: ( 'mobile': .66em 1em, 'tablet': 0.75em 1.1em );
+$label-margin: ( 'mobile': 0 0 3px 0, 'tablet': 0 0 0.85rem 0 );
+
+$label-color: #000;
+$label-size: 1.5em;
+
+/**
+ * Easing
+ */
+$ease-1: cubic-bezier(0.430, 0.205, 0.720, 0.770);
+$ease-2: cubic-bezier(0.680, 0.595, 0.000, 1.000);
+$ease-3: cubic-bezier(0.615, 0.025, 0.000, 1);

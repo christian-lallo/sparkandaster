@@ -1,0 +1,20 @@
+{% if text2  %}
+
+	<div class="caption {{ styles }} waypoint-anim">
+		<div class="container contained">
+			<div class="caption__text modifier--text-split">{{ text1 }}</div>
+			<hr>
+			<div class="caption__text modifier--text-split" >{{ text2 }}</div>
+		</div>
+	</div>
+
+{% else %}
+
+	<div class="caption {{ styles }} waypoint-anim">
+		<div class="container contained">
+			<hr class="hr hr--sm">
+			<div class="caption__text modifier--text-split">{{ text1 }}</div>
+		</div>
+	</div>
+
+{% endif %}

@@ -1,0 +1,27 @@
+.content-block {
+
+	&.is-summary {
+
+		margin-bottom: 7rem;
+	}
+}
+
+.media-block {
+
+	$margin: (
+		'tablet': 2.0rem,
+		'desktop': 6.0rem
+	);
+
+	margin-top: map-get($margin, tablet);
+	margin-bottom: map-get($margin, tablet);
+	position: relative;
+
+	img { width: 100%; }
+
+	@include tablet() {
+
+		margin-top: map-get($margin, desktop);
+		margin-bottom: map-get($margin, desktop);
+	}
+}

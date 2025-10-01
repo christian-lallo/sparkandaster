@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% set classnames = "case-study case-study--grace" %}
+{% set color = "#7222AF" %}
+
+{% block content %}
+
+	<main class="case-study">
+		<div class="inner inner--lg">
+
+			{% include 'partials/headers/work.html' with { 
+				'isFeatured': false, 
+				'increment': '02',
+				'client': 'Grace', 
+				'color': '#7222AF',
+				'title': 'Grace Starts<br><span style="color: #7222AF">Here.</span>',
+				'body': 'Spark + Aster helps a female-driven race team bring STEM awareness for young girls to 8 million people.',
+				'video': 'grace',
+				'img': '/dist/img/work/grace/car.png',
+				'link': '/work/grace'
+			} only %}
+
+			<div class="content-block is-summary">
+				<div class="is-centered">
+					<hr class="is-xl is-vert is-centered">
+					<h2 class="h--xl">“It’s a 200 mph <span style="color: {{ color }}">STEM</span> Classroom.”</h2>
+					<?php echo caption(['text1' => 'Beth Paretta<br>Team Owner, Grace Autosport', 'styles' => 'is-sm']); ?>
+					<p>Grace Autosport is more than a female forward professional race team.<br><br>It’s a movement that’s building a future wheregirls and young women are encouraged to pursue their dreams through careers in the fields of science, technology, engineering and math. Grace works to create and inspire current and future racing champions, by raising awareness of the viability of a STEM education for girls and young women.</p>
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<button class="icon icon--triangle is-clickable" data-vid="261364009">
+					{{ svg('icon-triangle') }}
+				</button>
+				<img src="/dist/img/work/grace/media-1.jpg">
+			</div>	
+
+		</div>
+	</main>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Let real files/folders through
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else to index.php
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# Helpful, but optional:
+DirectoryIndex index.php index.html
+AcceptPathInfo On
+

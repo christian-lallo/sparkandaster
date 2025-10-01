@@ -1,0 +1,268 @@
+/**
+ * Case Study Intro
+ */
+ $pad-case-study-intro: ( 
+ 	'mobile': 3.5rem 2.5rem, 
+ 	'tablet': 6.0rem 1.0rem,
+ 	'desktop': 9.5rem 5.5rem,
+);
+
+.case-study__intro {
+
+	$offset: ( 
+		'mobile': 3.5rem, 
+		'tablet': 6.0rem,
+		'desktop': 11.0rem,
+		);
+
+	max-width: 117.0rem;
+	margin-bottom: 12.0rem;
+	position: relative;
+
+	&:last-of-type { margin-bottom: 0; }
+
+	> .container {
+
+		display: flex; 
+		position: relative; 
+	}
+
+	.contained {
+
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative; 
+
+	}
+
+	/**
+	 * Background
+	 */
+	.bg {
+
+		//width: 75%;
+		//height: 75%;
+		width: 41vw;
+		height: 41vw;
+		max-width: 53.0rem;
+		position: absolute;
+		z-index: -1;
+
+		.caption { 
+
+			position: absolute; 
+			top: -3.0rem;
+		}
+
+		.solid {
+
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+	}
+
+	/*
+	 * Foreground
+	 */
+	.fg {
+		
+		width: 100%;
+		position: relative;
+		right: 0;
+		left: 0;
+		z-index: 1;
+		padding: map-get($pad-case-study-intro, mobile);
+		margin-top: map-get($offset, mobile);
+
+		&::after {
+
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% - #{map-get($offset, mobile)}); 
+			height: 100%;
+			background: #FFF;
+			z-index: -2;
+		}		
+
+		hr {
+
+			width: 7.2rem;
+			height: 0.4rem;
+			margin: 2rem 0 2rem 0;
+		}
+
+		p {
+
+			color: $black;
+			@include font-family('serif');
+			font-size: 1.3em;
+			max-width: 34.0rem;
+		}
+
+		a {
+
+			margin-top: 2rem;
+			display: table;
+		}
+	}
+
+	/**
+	 *  Image
+	 */
+	.thumb {
+
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: -1;
+		width: 55%;
+	}
+
+	/**
+	 * Odd
+	 */
+	&:nth-of-type(odd) {
+
+		.fg {
+
+			&::after {
+
+				right: 0;
+				left: auto;
+			}
+		}	
+	}
+
+	/**
+	 * Even
+	 */
+	&:nth-of-type(even) { 
+
+		.fg {
+		
+			&::after {
+
+				left: 0;
+			}
+		}
+
+		.bg {
+
+			margin-left: auto;
+			right: 0;
+		}
+	}
+
+	/**
+	 * Featured Work Item
+	 */
+	@at-root .featured-work .caption .container { width: 100%; }
+
+	/**
+	 * Breakpoints
+	 */
+	@include sm() {
+
+		.fg {	
+
+			p { width: 53%; }
+		}
+
+		.thumb { display: block; }
+   }
+
+	@include tablet() {
+
+		margin-bottom: 18.0rem;
+
+		.bg {
+
+			//width: 35vw;
+			//padding-bottom: 35vw;
+		}
+
+		.fg {	
+
+			background: transparent;
+			padding: map-get($pad-case-study-intro, tablet);
+			margin-top: map-get($offset, tablet);
+
+			// White bg
+			&::after { width: calc(100% - #{map-get($offset, tablet)}); }
+
+			hr { margin: 4rem 0 2rem 0rem; }
+
+			p { font-size: 1.4em; }
+		}
+
+	}
+
+	@include desktop() {
+
+		.contained { width: 78%; }
+
+		.fg {	
+
+			padding: map-get($pad-case-study-intro, desktop);
+			margin-top: map-get($offset, desktop);
+
+			&::after { width: calc(100% - #{map-get($offset, desktop)}); }
+
+			p { font-size: 1.6em; }
+		}
+	}
+}
+
+/**
+ * Static Thumb Placement
+ */
+#goldwell .thumb { top: -12%; }
+
+#grace .thumb { top: 6%; }
+
+#miami .thumb { bottom: 0; top: auto; }
+
+/**
+ * Case Study Page
+ */
+.case-study {
+
+	padding-top: 10.0rem;
+
+	.case-study__intro {
+
+		margin-bottom: 0;
+
+		.caption {
+
+			padding: map-get($pad-case-study-intro, desktop);
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-left: auto;
+			margin-right: auto;
+
+			@include until($tablet) {
+
+				padding: 0;
+
+				.contained { width: 100%; }
+			}
+		}
+
+		.fg {
+
+			&::after { left: 0; right: auto; }
+		}
+
+		.bg {
+
+			margin-left: auto;
+			right: 0;
+		}
+	}
+}

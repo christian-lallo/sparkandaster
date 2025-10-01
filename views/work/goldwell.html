@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set classnames = "case-study case-study--goldwell" %}
+{% set color = "#D4ABAF" %}
+
+{% block content %}
+
+	<main class="case-study">
+		<div class="inner inner--lg">
+
+			{% include 'partials/headers/work.html' with { 
+				'isFeatured': false, 
+				'increment': '01',
+				'client': 'Goldwell', 
+				'color': '#cc9b9c',
+				'title': 'The Elements<br>of <span style="color: #cc9b9c">Style.</span>',
+				'body': 'Launching an all new haircare line for Goldwell USA.',
+				'video': 'goldwell',
+				'img': '/dist/img/work/goldwell/drop.png',
+				'lik': '/work/goldwell'
+			} only %}
+
+			<div class="content-block is-summary">
+				<div class="is-centered">
+					<hr class="is-xl is-vert is-centered">
+					<h2 class="h--xl">Lorem Ipsum<br><span style="color: {{ color }}">consectetur</span></h2>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<button class="icon icon--triangle is-clickable" data-vid="261366121">
+					{{ svg('icon-triangle') }}
+				</button>
+				<img src="/dist/img/work/goldwell/media-1.jpg">
+			</div>	
+
+			<div class="media-block grid-container grid-container--media">
+				<div class="item">
+					<button class="icon icon--triangle is-clickable" data-vid="261365234">
+						
+					</button>
+					<img src="/dist/img/work/goldwell/media-2.jpg">
+				</div>
+				<div class="item">
+					
+					</button>
+					<img src="/dist/img/work/goldwell/media-3.jpg">
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<img src="/dist/img/work/goldwell/media-4.jpg">
+			</div>	
+
+		</div>
+	</main>
+
+{% endblock %}
