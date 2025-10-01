@@ -7,6 +7,8 @@
 	<main class="case-study">
 		<div class="inner inner--lg">
 
+			{% include "partials/_case_pager.twig" %}
+
 			{% include 'partials/headers/work.html' with { 
 				'isFeatured': false, 
 				'increment': '02',

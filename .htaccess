@@ -2,6 +2,14 @@
   RewriteEngine On
   RewriteBase /
 
+  # --- Block direct access to sensitive paths/files (must come FIRST) ---
+  # Directories
+  RewriteRule ^(views|vendor|cache)/ - [F,L]
+  # Core app files & composer metadata
+  RewriteRule ^(bootstrap\.php|PageController\.php|routes\.php|composer\.(json|lock))$ - [F,L]
+  # (Optional) block raw template/source files by extension anywhere
+  RewriteRule ^.*\.(twig|tpl|md|yml|yaml|ini|log|lock)$ - [F,L]
+
   # Let real files/folders through
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
@@ -15,3 +23,5 @@
 DirectoryIndex index.php index.html
 AcceptPathInfo On
 
+# (Optional) no directory listings if a folder slips through
+Options -Indexes

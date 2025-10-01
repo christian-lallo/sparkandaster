@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="work-index">
+  <h1>Selected Work</h1>
+  <ul class="work-list">
+	{% for c in cases %}
+	  <li><a href="/work/{{ c.slug }}">{{ c.title }}</a></li>
+	{% else %}
+	  <li>No cases yet — add one in <code>/views/work/</code>.</li>
+	{% endfor %}
+  </ul>
+</section>
+{% endblock %}
