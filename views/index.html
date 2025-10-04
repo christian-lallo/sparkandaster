@@ -82,58 +82,54 @@
 				    	</div>
 			    	</section>
 			
-			    	<section class="section our-values fill-height">
+			    	<section class="section whats-in-a-name fill-height">
 			    		<div class="stage">
 				    		<div class="inner">
 	
 					    			<h2 class="h--xxl">What&rsquo;s in a <span class="waypoint-anim" data-animation="anim-spark-text" data-offset="50%">Name?</span></h2>
-					    			<div class="grid-container grid-container--agency-icons">
-										<div class="item stella-trigger" data-name="humanity">
-											<img src="/dist/img/icons/icon-joy.svg">
-											<h6>Humanity</h6>
-										</div>
-										<div class="item stella-trigger" data-name="empathy">
-											<img src="/dist/img/icons/icon-empathy.svg">
-											<h6>Empathy</h6>
-										</div>
-										<div class="item stella-trigger" data-name="love">
-											<img src="/dist/img/icons/icon-love.svg">
-											<h6>Love</h6>
-										</div>
-										<div class="item stella-trigger" data-name="connectiom">
-											<img src="/dist/img/icons/icon-connection.svg">
-											<h6>Connection</h6>
-										</div>
-										<div class="item stella-trigger" data-name="inspiration">
-											<img src="/dist/img/icons/icon-inspiration.svg">
-											<h6>Inspiration</h6>
-										</div>
-										<div class="item">
-											<img src="/dist/img/icons/icon-care.svg">
-											<h6>Care</h6>
-										</div>
-										<div class="item">
-											<img src="/dist/img/icons/icon-guidance.svg">
-											<h6>Guidance</h6>
-										</div>
-										<div class="item">
-											<img src="/dist/img/icons/icon-artistry.svg">
-											<h6>Artistry</h6>
-										</div>
-									</div>
 				    		</div>
-
-				    		
-									<img class="actor waypoint-anim node-stella aster" id="aster1" data-animation="anim-aster1"  src="/dist/img/stella/normalized/Aster1.svg">
-									<img class="actor waypoint-anim node-stella aster" id="aster2" data-animation="anim-aster1"  src="/dist/img/stella/normalized/Aster2.svg">
-									<img class="actor waypoint-anim node-stella aster" id="aster3" data-animation="anim-aster1"  src="/dist/img/stella/normalized/Aster3.svg">
-									<img class="actor waypoint-anim node-stella aster" id="aster4" data-animation="anim-aster1"  src="/dist/img/stella/normalized/Aster4.svg">
-						    		<img class="actor waypoint-anim node-stella spark" id="spark1" data-animation="anim-spark1"    src="/dist/img/stella/normalized/Stella1.svg">
-									<img class="actor waypoint-anim node-stella spark" id="spark2" data-animation="anim-spark1"    src="/dist/img/stella/normalized/Stella2.svg">
-									<img class="actor waypoint-anim node-stella spark" id="spark3" data-animation="anim-spark1"    src="/dist/img/stella/normalized/Stella3.svg">
-									<img class="actor waypoint-anim node-stella spark" id="spark4" data-animation="anim-spark1"    src="/dist/img/stella/normalized/Stella4.svg">
 			    		</div><!-- /stage -->
-			    	</section> <!-- /our-values -->
+			    	</section> <!-- /whats-in-a-name -->
+
+			    	<section class="section value-humanity fill-height">
+			    		<div class="stage">
+				    		<div class="inner">
+					    			<h2 class="h--xxl">Humanity</h2>
+				    		</div>
+			    		</div><!-- /stage -->
+			    	</section> <!-- /value-humanity -->
+
+			    	<section class="section value-empathy fill-height">
+			    		<div class="stage">
+				    		<div class="inner">
+					    			<h2 class="h--xxl">Empathy</h2>
+				    		</div>
+			    		</div><!-- /stage -->
+			    	</section> <!-- /value-empathy -->
+
+			    	<section class="section value-love fill-height">
+			    		<div class="stage">
+				    		<div class="inner">
+					    			<h2 class="h--xxl">Love</h2>
+				    		</div>
+			    		</div><!-- /stage -->
+			    	</section> <!-- /value-love -->
+
+			    	<section class="section value-connection fill-height">
+			    		<div class="stage">
+				    		<div class="inner">
+					    			<h2 class="h--xxl">Connection</h2>
+				    		</div>
+			    		</div><!-- /stage -->
+			    	</section> <!-- /value-connection -->
+
+			    	<section class="section value-inspiration fill-height">
+			    		<div class="stage">
+				    		<div class="inner">
+					    			<h2 class="h--xxl">Inspiration</h2>
+				    		</div>
+			    		</div><!-- /stage -->
+			    	</section> <!-- /value-inspiration -->
 			
 			    	<section class="section ready-to-connect fill-height">
 			    		<div class="stage">
@@ -160,7 +156,17 @@
 
     </main>
 
-
+    <!-- Single fixed Stella instance for all value sections -->
+    <div id="stella-container">
+		<img class="actor node-stella aster" id="aster1" src="/dist/img/stella/normalized/Aster1.svg">
+		<img class="actor node-stella aster" id="aster2" src="/dist/img/stella/normalized/Aster2.svg">
+		<img class="actor node-stella aster" id="aster3" src="/dist/img/stella/normalized/Aster3.svg">
+		<img class="actor node-stella aster" id="aster4" src="/dist/img/stella/normalized/Aster4.svg">
+		<img class="actor node-stella spark" id="spark1" src="/dist/img/stella/normalized/Stella1.svg">
+		<img class="actor node-stella spark" id="spark2" src="/dist/img/stella/normalized/Stella2.svg">
+		<img class="actor node-stella spark" id="spark3" src="/dist/img/stella/normalized/Stella3.svg">
+		<img class="actor node-stella spark" id="spark4" src="/dist/img/stella/normalized/Stella4.svg">
+    </div>
 
 
 {% endblock %}

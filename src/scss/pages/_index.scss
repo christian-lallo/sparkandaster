@@ -45,7 +45,12 @@
 		border-bottom: 5px solid rgba(215,215,215,1);
 	}
 
-	.our-values {
+	.whats-in-a-name,
+	.value-humanity,
+	.value-empathy,
+	.value-love,
+	.value-connection,
+	.value-inspiration {
 		background: linear-gradient(5deg, rgba(240,240,240,1) 0, rgba(255,255,255,1) 100%);
 	}
 
@@ -276,6 +281,26 @@
 	#aster3.love		{ transform: translate(-11vmin, 0) rotate(45deg) 		scale(.8);}
 	#aster4.love		{ transform: translate(-11vmin, -20vmin) rotate(45deg) 	scale(.8);}
 
+
+//Connection - placeholder styles (can be customized later)
+	.node-stella.connection { transition: 1.5s 0s; }
+	.aster.connection { transform: rotate(90deg); }
+	.spark.connection { transform: rotate(45deg); }
+
+//Inspiration - placeholder styles (can be customized later)
+	.node-stella.inspiration { transition: 1.5s 0s; }
+	.aster.inspiration { transform: rotate(135deg); }
+	.spark.inspiration { transform: rotate(90deg); }
+
+// Keep Stella fixed across value sections
+	.value-humanity .node-stella,
+	.value-empathy .node-stella,
+	.value-love .node-stella,
+	.value-connection .node-stella,
+	.value-inspiration .node-stella {
+		position: fixed;
+		z-index: 100;
+	}
 
 
 

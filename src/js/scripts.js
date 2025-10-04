@@ -1,6 +1,6 @@
 
 //import axios from 'axios';
-//import particleNetwork from './ParticleNetWork';
+import particleNetwork from './ParticleNetwork';
 import waypoint from './vendor/noframework.waypoints.js';
 import fullpage from 'fullpage.js'
 //import Reveal from 'reveal.js'
@@ -153,33 +153,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   
   
-	  // Stella animations
-	  
-	  	let stellaTriggers = document.querySelectorAll('.stella-trigger');
+	  // Stella animations - now triggered by scroll
 
-		//attach click handlers to each icon
-		for( let count = 0, len = stellaTriggers.length; count < len; count++ ) {					  						
-			let triggerEl = stellaTriggers[count];
-			console.log("attaching click handler to "+triggerEl.getAttribute("data-name"));
-			triggerEl.addEventListener('click', ( event )  => {
-				//add classnames to each stellanode based on data-name of trigger element
-				let stellaNodes = document.querySelectorAll('.node-stella');
-				let nodeCount = stellaNodes.length;
+	  	// Helper function to transform Stella based on value name
+		function transformStella(stellaForm) {
+			let stellaNodes = document.querySelectorAll('.node-stella');
+			let nodeCount = stellaNodes.length;
 
-				//First remove any existing stella icon classes
-				for( let i = 0; i < nodeCount; i++ ) {					  		
-				    stellaNodes[i].classList.remove('humanity','connection','inspiration','empathy','love');
-				  }
-				
-				//Now add the new icon class
-				for( let i = 0; i < nodeCount; i++ ) {					  		
-				 	let element = stellaNodes[i];
-				 	let stellaForm = triggerEl.getAttribute('data-name');
-				 	console.log("adding class "+stellaForm+"to element "+element.getAttribute('id'));
-				  	element.classList.add(stellaForm);
-				};
-			});
-		};
+			// First remove any existing stella icon classes
+			for( let i = 0; i < nodeCount; i++ ) {
+				stellaNodes[i].classList.remove('humanity','connection','inspiration','empathy','love');
+			}
+
+			// Now add the new icon class (if provided)
+			if (stellaForm) {
+				for( let i = 0; i < nodeCount; i++ ) {
+					let element = stellaNodes[i];
+					console.log("adding class "+stellaForm+" to element "+element.getAttribute('id'));
+					element.classList.add(stellaForm);
+				}
+			}
+		}
 
 
 		// reset 
@@ -202,28 +196,57 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			//options here
 			autoScrolling:true,
 			scrollHorizontally: false,
-			licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',			
+			licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 			anchors: [
-				'video', 
-				'we-understand', 
-				'what-we-do', 
-				'our-values', 
+				'video',
+				'we-understand',
+				'what-we-do',
+				'whats-in-a-name',
+				'humanity',
+				'empathy',
+				'love',
+				'connection',
+				'inspiration',
 				'ready-to-connect'
 				],
-				
-		
-			afterLoad: function(origin, destination, direction){
-									
-					let sectionEl = destination.item;
-					console.log(sectionEl.getAttribute('data-anchor'));
 
+
+			afterLoad: function(origin, destination, direction){
+
+					let sectionEl = destination.item;
+					let anchor = sectionEl.getAttribute('data-anchor');
+					console.log('Section loaded:', anchor);
+
+					// Trigger Stella transformations based on section
+					switch(anchor) {
+						case 'whats-in-a-name':
+							transformStella(null); // Default/logo form
+							break;
+						case 'humanity':
+							transformStella('humanity');
+							break;
+						case 'empathy':
+							transformStella('empathy');
+							break;
+						case 'love':
+							transformStella('love');
+							break;
+						case 'connection':
+							transformStella('connection');
+							break;
+						case 'inspiration':
+							transformStella('inspiration');
+							break;
+					}
+
+					// Animate waypoint elements
 					let sectionWaypoints = sectionEl.querySelectorAll('.waypoint-anim');
-				
-					for( let i = 0, len = sectionWaypoints.length; i < len; i++ ) {					  		
+
+					for( let i = 0, len = sectionWaypoints.length; i < len; i++ ) {
 					 	let element = sectionWaypoints[i];
 					  	element.classList.add('anim--in');
 					};
-		
+
 			},
 
 			onLeave: function(origin, destination, direction){
