@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% set classnames = "case-study case-study--mica" %}
+{% set color = "#D4A962" %}
+
+{% block content %}
+
+	<!-- Hero Section (CSS Scroll Snap) -->
+	<section class="work-hero work-hero--mica" data-video-index="0">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/mica-gifts.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Giving the Gift<br>of <span class="work-hero__title-accent">Creativity</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Bringing art to life in a joyful campaign for MICA</p>
+			</div>
+
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/mica-gifts.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Traditional Scrolling Content -->
+	<main class="case-study work-content">
+		<div class="inner inner--lg">
+
+			{% include "partials/_case_pager.twig" %}
+
+			<div class="content-block is-summary">
+				<div class="is-centered">
+					<hr class="is-xl is-vert is-centered">
+					<h2 class="h--xl">Artistic Excellence<br><span style="color: {{ color }}">Celebrated</span></h2>
+					<p>The Maryland Institute College of Art (MICA) has been nurturing creative talent for generations. Our joyful campaign captures the transformative power of art education, celebrating the gift of creativity and the boundless potential it unlocks in every student.</p>
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<img src="/dist/img/work/goldwell/media-1.jpg">
+			</div>
+
+			<div class="media-block grid-container grid-container--media">
+				<div class="item">
+					<img src="/dist/img/work/goldwell/media-2.jpg">
+				</div>
+				<div class="item">
+					<img src="/dist/img/work/goldwell/media-3.jpg">
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<img src="/dist/img/work/goldwell/media-4.jpg">
+			</div>
+
+		</div><!-- /inner -->
+	</main>
+
+{% endblock %}

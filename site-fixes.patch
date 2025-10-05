@@ -1,0 +1,40 @@
+--- a/routes.php
++++ b/routes.php
+@@ -5,10 +5,8 @@
+ Flight::route('/about',   ['PageController', 'about']);
+ 
+ // Work index (lists cases from views/work/*.html|*.twig)
+-Flight::route('/work',    ['PageController', 'workIndex']);
+ 
+ // Single work case by slug (.html or .twig), prev/next handled in controller
+-Flight::route('/work/@path', ['PageController', 'work']);
+ 
+ // Simple twig-smoke probe (HTML-only; optional)
+ Flight::route('GET /twig-smoke', function () {
+@@ -26,10 +24,23 @@
+ });
+ 
+ // Friendly 404 page — extends layout.html
+-Flight::map('notFound', function() {
+-	http_response_code(404);
+-	Flight::view()->display('errors/404.html', [
++Flight::view()->display('errors/404.html', [
+ 		'title' => 'Not Found — Spark + Aster',
+ 		'page'  => 'error',
+ 	]);
+ });
++
++// Work index (controller)
++Flight::route('/work', ['PageController', 'workIndex']);
++
++// Single work case
++Flight::route('/work/@path', ['PageController', 'work']);
++
++// Friendly 404 using Twig (extends layout.html)
++Flight::map('notFound', function() {
++    http_response_code(404);
++    Flight::view()->display('errors/404.html', [
++        'title' => 'Not Found — Spark + Aster',
++        'page'  => 'error',
++    ]);
++});

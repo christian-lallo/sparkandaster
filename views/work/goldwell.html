@@ -4,22 +4,44 @@
 
 {% block content %}
 
-	<main class="case-study">
-		<div class="inner inner--lg">
-			
-			{% include "partials/_case_pager.twig" %}
+	<!-- Hero Section (CSS Scroll Snap) -->
+	<section class="work-hero" data-video-index="0">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/reconstruct_tease.mp4" type="video/mp4">
+			</video>
+			<video class="work-hero__background-video work-hero__background-video--2" autoplay muted loop playsinline>
+				<source src="/dist/vid/repower_tease.mp4" type="video/mp4">
+			</video>
+		</div>
 
-			{% include 'partials/headers/work.html' with { 
-				'isFeatured': false, 
-				'increment': '01',
-				'client': 'Goldwell', 
-				'color': '#cc9b9c',
-				'title': 'The Elements<br>of <span style="color: #cc9b9c">Style.</span>',
-				'body': 'Launching an all new haircare line for Goldwell USA.',
-				'video': 'goldwell',
-				'img': '/dist/img/work/goldwell/drop.png',
-				'lik': '/work/goldwell'
-			} only %}
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					The Elements<br>of <span class="work-hero__title-accent">Style.</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Launching an all new haircare line for Goldwell USA.</p>
+			</div>
+
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/reconstruct_tease.mp4" type="video/mp4">
+					</video>
+					<video class="work-hero__media-video work-hero__media-video--2" autoplay muted loop playsinline>
+						<source src="/dist/vid/repower_tease.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Traditional Scrolling Content -->
+	<main class="case-study work-content">
+		<div class="inner inner--lg">
+
+			{% include "partials/_case_pager.twig" %}
 
 			<div class="content-block is-summary">
 				<div class="is-centered">
@@ -52,9 +74,9 @@
 
 			<div class="media-block is-full">
 				<img src="/dist/img/work/goldwell/media-4.jpg">
-			</div>	
+			</div>
 
-		</div>
+		</div><!-- /inner -->
 	</main>
 
 {% endblock %}

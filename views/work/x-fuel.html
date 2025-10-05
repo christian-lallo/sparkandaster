@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% set classnames = "case-study case-study--x-fuel" %}
+{% set color = "#00FF00" %}
+
+{% block content %}
+
+	<!-- Hero Section (CSS Scroll Snap) -->
+	<section class="work-hero work-hero--x-fuel" data-video-index="0">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/x-fuel-teaser.mp4" type="video/mp4">
+			</video>
+		</div>
+
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Fueling global<br><span class="work-hero__title-accent">sustainability</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Spark + Aster ignites a new sustainable fuel brand for a global petrochemical company</p>
+			</div>
+
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/x-fuel-teaser.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Traditional Scrolling Content -->
+	<main class="case-study work-content">
+		<div class="inner inner--lg">
+
+			{% include "partials/_case_pager.twig" %}
+
+			<div class="content-block is-summary">
+				<div class="is-centered">
+					<hr class="is-xl is-vert is-centered">
+					<h2 class="h--xl">Sustainable Innovation<br><span style="color: {{ color }}">Reimagined</span></h2>
+					<p>X-Fuel represents the next generation of sustainable energy solutions, combining cutting-edge technology with environmental responsibility. Our comprehensive brand launch introduced a revolutionary approach to clean fuel that doesn't compromise on performance or reliability.</p>
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<img src="/dist/img/work/goldwell/media-1.jpg">
+			</div>
+
+			<div class="media-block grid-container grid-container--media">
+				<div class="item">
+					<img src="/dist/img/work/goldwell/media-2.jpg">
+				</div>
+				<div class="item">
+					<img src="/dist/img/work/goldwell/media-3.jpg">
+				</div>
+			</div>
+
+			<div class="media-block is-full">
+				<img src="/dist/img/work/goldwell/media-4.jpg">
+			</div>
+
+		</div><!-- /inner -->
+	</main>
+
+{% endblock %}
