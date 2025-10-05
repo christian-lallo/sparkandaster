@@ -1,13 +1,206 @@
 {% extends "layout.html" %}
+{% set classnames = "work-index-fullpage" %}
+
 {% block content %}
-<section class="work-index">
-  <h1>Selected Work</h1>
-  <ul class="work-list">
-	{% for c in cases %}
-	  <li><a href="/work/{{ c.slug }}">{{ c.title }}</a></li>
-	{% else %}
-	  <li>No cases yet — add one in <code>/views/work/</code>.</li>
-	{% endfor %}
-  </ul>
-</section>
+
+<div id="fullpage-work-index">
+
+	<!-- Goldwell Section -->
+	<section class="section work-hero work-hero--goldwell" data-video-index="0">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/reconstruct_tease.mp4" type="video/mp4">
+			</video>
+			<video class="work-hero__background-video work-hero__background-video--2" autoplay muted loop playsinline>
+				<source src="/dist/vid/repower_tease.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					The Elements<br>of <span class="work-hero__title-accent">Style.</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Launching an all new haircare line for Goldwell USA.</p>
+				<a href="/work/goldwell#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/reconstruct_tease.mp4" type="video/mp4">
+					</video>
+					<video class="work-hero__media-video work-hero__media-video--2" autoplay muted loop playsinline>
+						<source src="/dist/vid/repower_tease.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- X-Fuel Section -->
+	<section class="section work-hero work-hero--x-fuel">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/x-fuel-teaser.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Fueling global<br><span class="work-hero__title-accent">sustainability</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Spark + Aster ignites a new sustainable fuel brand for a global petrochemical company</p>
+				<a href="/work/x-fuel#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/x-fuel-teaser.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ETS Section -->
+	<section class="section work-hero work-hero--ets">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/ets-teaser.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					High Performance<br><span class="work-hero__title-accent">Creativity</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Spark + Aster powers the brand and marketing for ETS Racing Fuels</p>
+				<a href="/work/ets#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/ets-teaser.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Paretta Autosport Section -->
+	<section class="section work-hero work-hero--paretta-autosport">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/paretta-autosport-teaser.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Racing for<br><span class="work-hero__title-accent">Change</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Spark + Aster helps launch a female first racing team onto the global stage</p>
+				<a href="/work/paretta-autosport#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/paretta-autosport-teaser.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+		<!-- MICA Section -->
+	<section class="section work-hero work-hero--mica">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/mica-gifts.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Giving the Gift<br>of <span class="work-hero__title-accent">Creativity</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Bringing art to life in a joyful campaign for MICA</p>
+				<a href="/work/mica#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/mica-gifts.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- MoneyLion Section -->
+	<section class="section work-hero work-hero--moneylion">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/paretta-moneylion-teaser.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Here we<br><span class="work-hero__title-accent">Roar</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Spark + Aster helps bring MoneyLion's #womenwhoroar campaign to life on the global racing circuit</p>
+				<a href="/work/moneylion#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/paretta-moneylion-teaser.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Modera Section -->
+	<section class="section work-hero work-hero--modera">
+		<div class="work-hero__background">
+			<video class="work-hero__background-video work-hero__background-video--1 active" autoplay muted loop playsinline>
+				<source src="/dist/vid/modera-wealth-teaser.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="work-hero__content">
+			<div class="work-hero__text">
+				<h1 class="work-hero__title">
+					Wealth in service<br>of <span class="work-hero__title-accent">life</span>
+				</h1>
+				<hr class="work-hero__divider">
+				<p class="work-hero__subtitle">Spark + Aster brings human connection to wealth management</p>
+				<a href="/work/modera#case-study-content" class="work-hero__cta">View Case Study →</a>
+			</div>
+			<div class="work-hero__media">
+				<div class="work-hero__media-frame">
+					<video class="work-hero__media-video work-hero__media-video--1 active" autoplay muted loop playsinline>
+						<source src="/dist/vid/modera-wealth-teaser.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+</div>
+
+<!-- Scroll Down Indicator -->
+<div class="work-scroll-indicator">
+	<span class="work-scroll-indicator__text">Scroll Down for More Projects</span>
+	<span class="work-scroll-indicator__arrow">↓</span>
+</div>
+
 {% endblock %}
